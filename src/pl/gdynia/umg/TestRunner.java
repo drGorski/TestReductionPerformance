@@ -17,16 +17,6 @@ public class TestRunner {
         return smartContracts[sC].checkSC(TestManager.getTransaction(tR));
     }
 
-    private static void checkSuites(){
-        boolean correct = false;
-        for (int i = 0; i < smartContracts.length; i++) {
-            for(int j = 0; j < i + 2; j++){
-                correct = runTest(i,j);
-                System.out.println("Contract: " + (i+1) + ", transaction: " + (j+1) + ", result: " + correct);
-            }
-            System.out.println("---");
-        }
-    }
     private static long runTest(int sC, int repetitions, int tR){
         long sum = 0;
         long startTime, endTime;
